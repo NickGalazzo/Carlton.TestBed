@@ -1,0 +1,32 @@
+﻿@using Carlton.Base.Client.Components
+@using Carlton.Base.Client.State
+@using Carlton.TestBed.Components
+@namespace Carlton.TestBed.Pages
+@inherits LayoutComponentBase
+
+<DashboardLayout>
+    <HeaderContent>
+        <TestBedHeader />
+    </HeaderContent>
+    <Body>
+        <CarltonDataComponent TViewModel="ComponentViewerViewModel" />
+    </Body>
+    <PanelContent>
+        <Panel />
+    </PanelContent>
+    <NavContent>
+        <CarltonDataComponent TViewModel="NavTreeViewModel" />
+    </NavContent>
+    <FooterContent>
+        <TestBedFooter />
+    </FooterContent>
+</DashboardLayout>
+
+
+
+
+
+
+
+
+

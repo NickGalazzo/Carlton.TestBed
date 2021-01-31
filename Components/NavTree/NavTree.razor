@@ -1,0 +1,18 @@
+﻿@using Carlton.Base.Client.Components
+@using Carlton.Base.Client.State
+@namespace Carlton.TestBed.Components
+
+@inherits CarltonComponentBase<NavTreeViewModel>
+
+<Tree TNode="NavTreeItemModel"
+      Nodes="ViewModel?.TreeItems"
+      SelectedNode="@ViewModel?.SelectedNode"
+      SelectedNodeChanged="@(async (node) => await base.OnComponentEvent.InvokeAsync(new NavTreeSelectedNodeEvent(node.LeafId)))"
+      Style="TreeStyle.DefaultTreeStyle">
+    <TitleTemplate>@context.DisplayName</TitleTemplate>
+</Tree>
+
+
+@*ExpandedNodes="ViewModel.ExpandedNodes.ToList()"
+    ExpandedNodesChanged="(nodes) => base.OnComponentEvent.InvokeAsync(new ExpandedNodesChangedEvent((IEnumerable<TestBedNavTreeItem>) nodes)"*@
+
